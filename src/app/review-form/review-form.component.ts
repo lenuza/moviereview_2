@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
 
-import { ReviewFormImageComponent } from './review-form-image/review-form-image.component';
+import { ReviewFormImageComponent } from '../review-form-image/review-form-image.component';
 
 @Component({
   selector: 'app-review-form',

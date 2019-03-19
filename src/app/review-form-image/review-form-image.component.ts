@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
-import { ReviewFormComponent } from '../review-form/review-form.component';
 
 @Component({
   selector: 'app-review-form-image',
   templateUrl: './review-form-image.component.html',
-  styleUrls: ['./review-form-image.component.scss', '../review-form/review-form.component.scss' ]
+  styleUrls: ['./review-form-image.component.scss' ]
 })
 export class ReviewFormImageComponent implements OnInit {
 
@@ -20,7 +19,7 @@ export class ReviewFormImageComponent implements OnInit {
   }
 
   onSubmit() {
-    var imgValue = document.getElementById('image').value;
+    var imgValue = (<HTMLInputElement>document.getElementById('image')).value;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=86e4ae72951df30e8b2aa210d5338c8d&query=${imgValue}`;
 
     fetch(url)
