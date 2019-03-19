@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Directive, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
 
 import { ReviewFormImageComponent } from '../review-form-image/review-form-image.component';
@@ -10,6 +10,8 @@ import { ReviewFormImageComponent } from '../review-form-image/review-form-image
 })
 export class ReviewFormComponent implements OnInit {
 
+  @ViewChild(ReviewFormImageComponent) primarySampleComponent: ColorSampleComponent; //TO check it out @ViewChild(ReviewFormImageComponent) https://blog.angular-university.io/angular-viewchild/  https://medium.com/@tkssharma/understanding-viewchildren-viewchild-contentchildren-and-contentchild-b16c9e0358e  https://ngrefs.com/en/latest/core/view-child https://stackoverflow.com/questions/34947154/angular-2-viewchild-annotation-returns-undefined
+
   constructor() { }
 
   reviewForm: FormGroup;
@@ -18,7 +20,6 @@ export class ReviewFormComponent implements OnInit {
     this.reviewForm = new FormGroup({
       title: new FormControl(),
       director: new FormControl(),
-      imagename: new FormControl(),
       cast: new FormControl(),
       notes: new FormControl()
     });
