@@ -7,7 +7,7 @@
     <label for="director" class="invisible">Director</label>
     <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
     <label for="image" class="invisible">Movie image</label>
-    <app-review-form-image></app-review-form-image>
+    <app-review-form-image (addImage)='addImage($event)'></app-review-form-image>
     <label for="cast" class="invisible">Movie cast</label>
     <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
     <label for="text-body" class="invisible">Your notes</label>

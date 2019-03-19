@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormGroup, FormControl } from  '@angular/forms';
   styleUrls: ['./review-form-image.component.scss' ]
 })
 export class ReviewFormImageComponent implements OnInit {
-
+  @Output() addImage = new EventEmitter();
   constructor() { }
 
   imageInput: FormGroup;
@@ -19,17 +19,26 @@ export class ReviewFormImageComponent implements OnInit {
   }
 
   onSubmit() {
-    var imgValue = (<HTMLInputElement>document.getElementById('image')).value;
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=86e4ae72951df30e8b2aa210d5338c8d&query=${imgValue}`;
+    var getMovie = (<HTMLInputElement>document.getElementById('image')).value;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=86e4ae72951df30e8b2aa210d5338c8d&query=${getMovie}`;
 
     fetch(url)
       .then(response => response.json())
-      .then(function(data) {
-        console.log(data)
+      .then(data => {
+        var firstMovie = data.results[0];
+        var getImage = firstMovie.poster_path;
+        var imgURL =  `http://image.tmdb.org/t/p/w185//${getImage}`;
+        
+
+        this.addImage.emit(imgURL);
+        console.log(imgURL)
       })
       .catch(err => console.log('image not found'))
+
+   
   }
 
+  
 }
 
   //

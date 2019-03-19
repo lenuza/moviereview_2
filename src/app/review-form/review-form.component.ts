@@ -32,6 +32,10 @@ export class ReviewFormComponent implements OnInit {
       //   this.reviewForm.reset();
   }
 
+  addImage(image) {
+    console.log('zzzzzzzzzzzzzzz', image)
+  }
+
 
 }
 
