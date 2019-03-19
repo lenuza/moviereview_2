@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+$colors: (
+  primary: turquoise,
+  button: rgb(227, 227, 208),
+  button-border: rgb(140, 140, 120),
+  primary-font: #333,
+  inverted-font: #ccc
+);
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  height: 90vh;
+  margin: 0;
+  position: relative;
+  z-index: -100;
+
+}
+
+body {
+
+  #background{
+    background-color : map-get($colors, primary);
+    -webkit-clip-path: polygon(100% 0, 100% 75%, 70% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 75%, 70% 100%, 0 100%, 0 0);
+            position: absolute;
+            height: 90vh;
+            width: 100%;
+            z-index: -1;
+  }
+
+}

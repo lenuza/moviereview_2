@@ -1,0 +1,38 @@
+@import "src/styles.scss";
+
+nav {
+  position: relative;
+   z-index: 2;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    justify-content: flex-end;
+    padding-right: 100px;
+    text-transform: capitalize;
+
+    li {
+      background-color: map-get($colors, button);
+      border: 2px solid map-get($colors, button-border);
+      border-radius: 5px;
+      color: map-get($colors, primary-font);
+      list-style-type: none;
+      margin: auto 20px;
+
+      a {
+        box-sizing: border-box;
+        display: block;
+        padding: 5px; //moved padding from li to a, so that a will take entire li
+        text-decoration: none;
+
+        &:hover {
+          background-color: map-get($colors, button-border);
+          border-color: map-get($colors, button);
+          color: map-get($colors, inverted-font);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

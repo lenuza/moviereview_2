@@ -1,0 +1,55 @@
+main {
+  position: absolute;
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+   /*https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element */
+   margin-top: 50px;
+  transform: translate(-50%);
+}
+
+/****review form****/
+
+form {
+  margin: auto;
+  width: 500px;
+
+  input {
+    border: 0;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  button {
+    float: left;
+    font-size: 1em;
+    padding: 5px;
+    width: 50%;
+  }
+
+  textarea {
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+}
+
+/***image position***/
+img {
+  border: 2px solid black;
+  width:300px;
+}
+figure {
+  max-width: 204px;
+  position: relative;
+  left: 470px;
+  top: -300px;
+  width: auto;
+}
+/***lables ***/
+.invisible {
+    height: 1px;
+    left: -1000px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
