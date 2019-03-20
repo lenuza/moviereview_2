@@ -7,7 +7,9 @@ import { FormGroup, FormControl } from  '@angular/forms';
   styleUrls: ['./review-form-image.component.scss' ]
 })
 export class ReviewFormImageComponent implements OnInit {
+
   @Output() addImage = new EventEmitter();
+
   constructor() { }
 
   imageInput: FormGroup;
@@ -28,17 +30,15 @@ export class ReviewFormImageComponent implements OnInit {
         var firstMovie = data.results[0];
         var getImage = firstMovie.poster_path;
         var imgURL =  `http://image.tmdb.org/t/p/w185//${getImage}`;
-        
 
         this.addImage.emit(imgURL);
-        console.log(imgURL)
+
       })
       .catch(err => console.log('image not found'))
 
-   
   }
 
-  
+
 }
 
   //

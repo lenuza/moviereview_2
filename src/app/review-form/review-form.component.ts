@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit, Directive, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
+import * as $ from 'jquery';
 
 import { ReviewFormImageComponent } from '../review-form-image/review-form-image.component';
+import {Review} from "../models/review.model";
 
 @Component({
   selector: 'app-review-form',
@@ -18,24 +20,40 @@ export class ReviewFormComponent implements OnInit {
 
   ngOnInit() {
     this.reviewForm = new FormGroup({
-      title: new FormControl(),
-      director: new FormControl(),
       cast: new FormControl(),
-      notes: new FormControl()
+      director: new FormControl(),
+      notes: new FormControl(),
+      title: new FormControl()
     });
-  }
 
-  onSubmit(): void {
-
-    console.log(this.reviewForm.value);
-      // if (this.reviewForm.valid) {
-      //   console.log("Form Submitted!");
-      //   this.reviewForm.reset();
   }
 
   addImage(image) {
-    console.log('zzzzzzzzzzzzzzz', image)
+    console.log('zzzzzzzzzzzzzzz', image);
   }
+
+  onSubmit() {
+    console.log(this.reviewForm.value);
+    // event.preventDefault()
+   var reviewData = this.reviewForm.serializeArray();
+   //using reduce to simplify the object in array in array structure, so now we have only obejcts in one array
+   // reviewData = reviewData.reduce((reviewData, obj) => {var goodObj = {}; goodObj[obj.name] = obj.value;
+   // return Object.assign(reviewData, goodObj)}, {})
+   //
+   // reviewData['image'] = $('img').attr('src');
+
+   var arrayContainer = JSON.parse(localStorage.getItem('reviews'));
+   if (!arrayContainer) {
+       arrayContainer = [];
+   }
+   // nextIndex = arrayContainer.length
+   // reviewData['id'] = nextIndex;
+   var jsonData = reviewData;
+   arrayContainer.push(jsonData);
+   localStorage.setItem('reviews', JSON.stringify(arrayContainer));
+
+  }
+
 
 
 }
