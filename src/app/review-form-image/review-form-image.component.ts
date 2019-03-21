@@ -32,8 +32,8 @@ export class ReviewFormImageComponent implements OnInit {
         var getImage = firstMovie.poster_path;
         var imgURL =  `http://image.tmdb.org/t/p/w185//${getImage}`;
 
-        this.addImage.emit(imgURL);
-        this.addImageURL.emit( getMovie);
+        this.addImage.emit(imgURL, getMovie);
+        // this.addImageURL.emit( getMovie);
 
       })
       .catch(err => console.log('image not found'))

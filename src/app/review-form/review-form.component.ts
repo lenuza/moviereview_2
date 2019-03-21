@@ -28,16 +28,16 @@ export class ReviewFormComponent implements OnInit {
 
   }
 
-  addImage (image) {
-    console.log('zzzzzzzzzzzzzzz', image);
+  addImage (image, alt) {
+    console.log('zzzzzzzzzzzzzzz', image, alt);
     this.reviewForm.patchValue({ image: image });
     // this.reviewForm.patchValue({ imageName: alt });
   }
-  addImageURL (alt) {
-    console.log('zzzzzzzzzzzzzzz', alt);
-    this.reviewForm.patchValue({ imageName: alt });
-  // this.reviewForm.patchValue({ imageName: alt });
-  }
+  // addImageURL (alt) {
+  //   console.log('zzzzzzzzzzzzzzz', alt);
+  //   this.reviewForm.patchValue({ imageName: alt });
+  // // this.reviewForm.patchValue({ imageName: alt });
+  // }
 
   onSubmit() {
    // reviewData['image'] = $('img').attr('src');
