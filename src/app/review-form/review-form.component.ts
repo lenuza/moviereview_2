@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Directive, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Directive, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl } from  '@angular/forms';
 import * as $ from 'jquery';
 
@@ -10,139 +10,53 @@ import {Review} from "../models/review.model";
   templateUrl: './review-form.component.html',
   styleUrls: ['./review-form.component.scss']
 })
-export class ReviewFormComponent implements OnInit {
 
-  @ViewChild(ReviewFormImageComponent) primarySampleComponent: ColorSampleComponent; //TO check it out @ViewChild(ReviewFormImageComponent) https://blog.angular-university.io/angular-viewchild/  https://medium.com/@tkssharma/understanding-viewchildren-viewchild-contentchildren-and-contentchild-b16c9e0358e  https://ngrefs.com/en/latest/core/view-child https://stackoverflow.com/questions/34947154/angular-2-viewchild-annotation-returns-undefined
+export class ReviewFormComponent implements OnInit {
 
   constructor() { }
 
   reviewForm: FormGroup;
-
   ngOnInit() {
     this.reviewForm = new FormGroup({
       cast: new FormControl(),
       director: new FormControl(),
+      image: new FormControl(),
+      imageName: new FormControl(),
       notes: new FormControl(),
       title: new FormControl()
     });
 
   }
 
-  addImage(image) {
+  addImage (image) {
     console.log('zzzzzzzzzzzzzzz', image);
+    this.reviewForm.patchValue({ image: image });
+    // this.reviewForm.patchValue({ imageName: alt });
+  }
+  addImageURL (alt) {
+    console.log('zzzzzzzzzzzzzzz', alt);
+    this.reviewForm.patchValue({ imageName: alt });
+  // this.reviewForm.patchValue({ imageName: alt });
   }
 
   onSubmit() {
-    console.log(this.reviewForm.value);
-    // event.preventDefault()
-   var reviewData = this.reviewForm.serializeArray();
-   //using reduce to simplify the object in array in array structure, so now we have only obejcts in one array
-   // reviewData = reviewData.reduce((reviewData, obj) => {var goodObj = {}; goodObj[obj.name] = obj.value;
-   // return Object.assign(reviewData, goodObj)}, {})
-   //
    // reviewData['image'] = $('img').attr('src');
-
-   var arrayContainer = JSON.parse(localStorage.getItem('reviews'));
-   if (!arrayContainer) {
+    var arrayContainer = JSON.parse(localStorage.getItem('reviews'));
+    if (!arrayContainer) {
        arrayContainer = [];
-   }
-   // nextIndex = arrayContainer.length
-   // reviewData['id'] = nextIndex;
-   var jsonData = reviewData;
-   arrayContainer.push(jsonData);
-   localStorage.setItem('reviews', JSON.stringify(arrayContainer));
-
+    }
+    var jsonData = this.reviewForm.value;
+    arrayContainer.push(jsonData);
+    localStorage.setItem('reviews', JSON.stringify(arrayContainer));
+    console.log(arrayContainer);
   }
 
-
-
 }
-
-
-  //   var imgValue = document.querySelector('#image').value;
-  //
-  //   $.ajax({
-  //     url: `https://api.unsplash.com/search/photos?page=1&query=${imgValue}`,
-  //     headers: {
-  //       Authorization: 'Client-ID f81bd9b86a0d0fa82b91ba4818581ebe62c2a8310edb4c9d9dfe3744fc6b742b'
-  //     }
-  //   })
-  //   .done(addImage)
-  //   .fail(function () {
-  //         alert('Error while making this request');
-  //   });
-  // });
-
-    // function addImage(data, imgValue) {
-    //   let htmlContent = '';
-    //   if (data && data.results && data.results.length > 0) {
-    //     var valueImg = document.querySelector('#image').value; // not sure why won't take the value
-    //     const firstImage = data.results[0];
-    //     htmlContent = `<figure>
-    //     <img src='${firstImage.urls.small}' alt='${valueImg}'>
-    //     <figcaption>${valueImg} by ${firstImage.user.name}</figcaption>
-    //     </figure>`;
-    //   } else {
-    //        htmlContent = '<div>No images available</div>';
-    //   }
-    //
-    //  document.getElementById('results').innerHTML = htmlContent;
-    // };
-
-  // // onSubmit() {
-  // //
-  // // }
-  //   // event.preventDefault()
-  //   // var reviewData = $(this).serializeArray();
-  //   // //using reduce to simplify the object in array in array structure, so now we have only obejcts in one array
-  //   // reviewData = reviewData.reduce((reviewData, obj) => {var goodObj = {}; goodObj[obj.name] = obj.value;
-  //   // return Object.assign(reviewData, goodObj)}, {})
-  //   //
-  //   // reviewData['image'] = $('img').attr('src');
-  //   //
-  //   // var arrayContainer = JSON.parse(localStorage.getItem('reviews'));
-  //   // if (!arrayContainer) {
-  //   //     arrayContainer = [];
-  //   // }
-  //   // nextIndex = arrayContainer.length
-  //   // reviewData['id'] = nextIndex;
-  //   // var jsonData = reviewData;
-  //   // arrayContainer.push(jsonData);
-  //   // localStorage.setItem('reviews', JSON.stringify(arrayContainer));
-  // }
-
-
-
+// export class AppComponent implements  AfterViewInit {
 //
+//   @ViewChild(ReviewFormImageComponent) reviewFormImageComponent: ReviewFormImageComponent;
 //
-// $('.img-button').on('click', function(event) {
-//   event.preventDefault();
-//   var imgValue = document.querySelector('#image').value;
-//
-//   $.ajax({
-//     url: `https://api.unsplash.com/search/photos?page=1&query=${imgValue}`,
-//     headers: {
-//       Authorization: 'Client-ID f81bd9b86a0d0fa82b91ba4818581ebe62c2a8310edb4c9d9dfe3744fc6b742b'
-//     }
-//   })
-//   .done(addImage)
-//   .fail(function () {
-//         alert('Error while making this request');
-//   });
-// });
-//
-//   function addImage(data, imgValue) {
-//     let htmlContent = '';
-//     if (data && data.results && data.results.length > 0) {
-//       var valueImg = document.querySelector('#image').value; // not sure why won't take the value
-//       const firstImage = data.results[0];
-//       htmlContent = `<figure>
-//       <img src='${firstImage.urls.small}' alt='${valueImg}'>
-//       <figcaption>${valueImg} by ${firstImage.user.name}</figcaption>
-//       </figure>`;
-//     } else {
-//          htmlContent = '<div>No images available</div>';
-//     }
-//
-//    document.getElementById('results').innerHTML = htmlContent;
-//   };
+//   ngAfterViewInit() {
+//     console.log("reviewFormImageComponent:", this.reviewFormImageComponent);
+//   }
+// }

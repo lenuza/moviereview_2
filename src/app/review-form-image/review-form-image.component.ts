@@ -9,6 +9,7 @@ import { FormGroup, FormControl } from  '@angular/forms';
 export class ReviewFormImageComponent implements OnInit {
 
   @Output() addImage = new EventEmitter();
+  @Output() addImageURL = new EventEmitter();
 
   constructor() { }
 
@@ -32,6 +33,7 @@ export class ReviewFormImageComponent implements OnInit {
         var imgURL =  `http://image.tmdb.org/t/p/w185//${getImage}`;
 
         this.addImage.emit(imgURL);
+        this.addImageURL.emit( getMovie);
 
       })
       .catch(err => console.log('image not found'))
@@ -40,20 +42,3 @@ export class ReviewFormImageComponent implements OnInit {
 
 
 }
-
-  //
-  //   function addImage(data, imgValue) {
-  //     let htmlContent = '';
-  //     if (data && data.results && data.results.length > 0) {
-  //       var valueImg = document.querySelector('#image').value; // not sure why won't take the value
-  //       const firstImage = data.results[0];
-  //       htmlContent = `<figure>
-  //       <img src='${firstImage.urls.small}' alt='${valueImg}'>
-  //       <figcaption>${valueImg} by ${firstImage.user.name}</figcaption>
-  //       </figure>`;
-  //     } else {
-  //          htmlContent = '<div>No images available</div>';
-  //     }
-  //
-  //    document.getElementById('results').innerHTML = htmlContent;
-  //   };

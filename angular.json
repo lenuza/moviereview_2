@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.scss",
-               "../node_modules/jquery/dist/jquery.min.js"
+               "node_modules/jquery/dist/jquery.min.js"
             ],
             "scripts": [],
             "es5BrowserSupport": true

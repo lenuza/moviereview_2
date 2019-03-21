@@ -1,24 +1,21 @@
 <main id="review-main">
 
-  <!-- <form  id="your-review" class="review-form" autocomplete="off"  (ngSubmit)="onSubmit(reviewform)" #reviewform="ngForm"> -->
     <form  [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="review-form" class="review-form" autocomplete="off">
     <label for="title" class="invisible">Movie title</label>
     <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title" required/>
     <label for="director" class="invisible">Director</label>
     <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
     <label for="image" class="invisible">Movie image</label>
-    <app-review-form-image (addImage)='addImage($event)'></app-review-form-image>
+    <app-review-form-image #imageRef (addImage)="addImage($event)"></app-review-form-image>
     <label for="cast" class="invisible">Movie cast</label>
     <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
     <label for="text-body" class="invisible">Your notes</label>
     <textarea id="text-body" formControlName="notes" name="notes" rows="10" cols="100" placeholder="Your notes..."></textarea>
     <button type="reset">Reset</button>
     <button type="submit">Submit</button>
+    <figure>
+      <img id="image" [src]="image" alt=""/>
+    </figure>
   </form>
-  <div id="results" form="review-form">
-  </div>
+
 </main>
-
-
-   <!-- <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"> </script>
-   <script type="text/javascript" src="js/newReview.js"> </script> -->
