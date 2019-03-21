@@ -7,14 +7,14 @@
     <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
     <label for="image" class="invisible">Movie image</label>
     <app-review-form-image #imageRef (addImage)="addImage($event)"></app-review-form-image>
-    <label for="cast" class="invisible">Movie cast</label>
+    <label for="cast" id="test" class="invisible">Movie cast</label>
     <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
     <label for="text-body" class="invisible">Your notes</label>
     <textarea id="text-body" formControlName="notes" name="notes" rows="10" cols="100" placeholder="Your notes..."></textarea>
     <button type="reset">Reset</button>
     <button type="submit">Submit</button>
     <figure>
-      <img id="image" [src]="image" alt=""/>
+      <img id="imagePoster" #displayPoster src="" alt=""/>
     </figure>
   </form>
 
