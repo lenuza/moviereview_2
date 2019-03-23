@@ -1,10 +1,10 @@
 
 <!-- //    anchorDetails.setAttribute('href',`detailed-review.html?id=${review.id}`); -->
 <div class="reviews-container">
-  <div class="another-review">
-    <h3>{{title}}</h3>
-    <a routerLink="/" aria-label="detailed review">
-      <img src='{{image}}' />
+  <div class="another-review" *ngFor="let review of reviews;  index as i">
+    <h3>{{review.title}}</h3>
+    <a routerLink="/details/{{i}}/{{review.imageName}}" aria-label="detailed review">
+      <img src="{{review.image}}" alt="{{review.imageName}}" title="{{review.title}}" />
     </a>
   </div>
 </div>

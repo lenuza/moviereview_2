@@ -11,6 +11,9 @@ export class ReviewDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var reviews = localStorage.getItem('reviews');
+    var parsedData = JSON.parse(reviews);
+    console.log(parsedData)
   }
 
   // var reviews = localStorage.getItem('reviews');
@@ -34,5 +37,6 @@ export class ReviewDetailsComponent implements OnInit {
   // document.getElementById('notes').innerHTML = displayNotes;
   // document.getElementById('image').setAttribute('alt', imgInputValue);
   // document.getElementById('image').setAttribute('src', displayImg);
+
 
 }

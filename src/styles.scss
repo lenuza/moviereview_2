@@ -28,7 +28,8 @@ body {
     -webkit-clip-path: polygon(100% 0, 100% 75%, 70% 100%, 0 100%, 0 0);
             clip-path: polygon(100% 0, 100% 75%, 70% 100%, 0 100%, 0 0);
             position: absolute;
-            height: 90vh;
+            min-height: 90vh;
+            height: auto;
             width: 100%;
             z-index: -1;
   }
