@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Review} from "../models/review.model";
+import { GetlocalstorageService } from '../getlocalstorage.service';
 
 @Component({
   selector: 'app-review-details',
@@ -8,13 +9,14 @@ import {Review} from "../models/review.model";
 })
 export class ReviewDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getData: GetlocalstorageService) { }
 
-  ngOnInit() {
-    var reviews = localStorage.getItem('reviews');
-    var parsedData = JSON.parse(reviews);
-    console.log(parsedData)
-  }
+   ngOnInit() {
+   var reviews: [] = [];
+   this.reviews = this.getData.getParsedData();
+   console.log(reviews)
+
+   }
 
   // var reviews = localStorage.getItem('reviews');
   // var parsedData = JSON.parse(reviews);
@@ -23,20 +25,5 @@ export class ReviewDetailsComponent implements OnInit {
   // var review = parsedData.find( (review)=> {
   //   return review.id == id;
   // })
-  //
-  // var displayTitle = review.title;
-  // var displayDirector = review.director;
-  // var imgInputValue = review.alt;
-  // var displayCast = review.cast;
-  // var displayNotes = review.notes;
-  // var displayImg = review.image;
-  //
-  // document.getElementById('title').innerHTML = displayTitle;
-  // document.getElementById('director').innerHTML = displayDirector;
-  // document.getElementById('cast').innerHTML = displayCast;
-  // document.getElementById('notes').innerHTML = displayNotes;
-  // document.getElementById('image').setAttribute('alt', imgInputValue);
-  // document.getElementById('image').setAttribute('src', displayImg);
-
 
 }
