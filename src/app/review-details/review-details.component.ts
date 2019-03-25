@@ -11,19 +11,16 @@ export class ReviewDetailsComponent implements OnInit {
 
   constructor(private getData: GetlocalstorageService) { }
 
-   ngOnInit() {
-   var reviews: [] = [];
-   this.reviews = this.getData.getParsedData();
-   console.log(reviews)
+  ngOnInit() {
+    // var reviews: [] = [];
+    // this.reviews = this.getData.getParsedData();
+    // console.log(reviews)
 
-   }
-
-  // var reviews = localStorage.getItem('reviews');
-  // var parsedData = JSON.parse(reviews);
-  // //using id to display the relevant object
-  // const id = document.location.search.slice(4);
-  // var review = parsedData.find( (review)=> {
-  //   return review.id == id;
-  // })
-
+    //using id to display the relevant object
+    const title = document.location.toString();
+    // this.reviews.find( (review) => {
+    // return review.ttile == title;
+    // })
+    console.log(title)
+  }
 }

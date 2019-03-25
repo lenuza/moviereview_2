@@ -50,7 +50,6 @@ export class ReviewFormComponent implements OnInit {
     localStorage.setItem('reviews', JSON.stringify(arrayContainer));
 //Form reset
     if (this.reviewForm.valid) {
-      console.log("Form Submitted!");
       this.reviewFormImageComponent.imageInput.reset();
       this.reviewForm.reset();
       document.getElementById('imagePoster').setAttribute('src', '');
@@ -62,16 +61,15 @@ export class ReviewFormComponent implements OnInit {
     setTimeout(() => {
       this.router.navigateByUrl('/reviews');
     }, 5000);
-
-  //   setInterval(() => {
-  //     var seconds = 5;
-  //     document.getElementById('seconds').innerHTML = `${seconds}`;
-  //     seconds--;
-  //     if(seconds <= 0) {
-  //       clearInterval();
-  //     }
-  //   }, 1000);
-  //   clearInterval();
+//countdown for redirect
+    var seconds = 5;
+    var counter = setInterval(() => {
+      document.getElementById('seconds').innerHTML = `${seconds}`;
+      seconds--;
+      if(seconds < 0) {
+      clearInterval(counter);
+      }
+    }, 1000);
   }
 //Stay on page, apparently navigate vlaue cannot be the current link, so used the code below
   stayOnPage() {
