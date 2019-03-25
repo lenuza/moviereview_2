@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Review} from "../models/review.model";
-import { GetlocalstorageService } from '../services/getlocalstorage.service';
+import { jsonserverService  } from '../services/jsonserver.service';
 
 @Component({
   selector: 'app-review-details',
@@ -9,18 +9,11 @@ import { GetlocalstorageService } from '../services/getlocalstorage.service';
 })
 export class ReviewDetailsComponent implements OnInit {
 
-  constructor(private getData: GetlocalstorageService) { }
+  constructor(private _getServerData: jsonserverService, private _getReview: jsonserverService) { }
 
   ngOnInit() {
-    // var reviews: [] = [];
-    // this.reviews = this.getData.getParsedData();
-    // console.log(reviews)
+    this._getReview.getReview('http://localhost:3000/reviews' + '/' + id)
+        .subscribe((res) => console.log(res))
 
-    //using id to display the relevant object
-    const title = document.location.toString();
-    // this.reviews.find( (review) => {
-    // return review.ttile == title;
-    // })
-    console.log(title)
   }
 }

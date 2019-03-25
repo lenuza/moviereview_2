@@ -13,7 +13,7 @@ export class ReviewThumbnailComponent implements OnInit {
   public reviews: Review;
   // public errorMessage;
  // constructor(private getData: GetlocalstorageService) { }
-  constructor(private _getServerData: jsonserverService) { }
+  constructor(private _getServerData: jsonserverService, private _deleteReview: jsonserverService) { }
 
   ngOnInit() {
   // var reviews: [] = [];
@@ -23,5 +23,10 @@ export class ReviewThumbnailComponent implements OnInit {
     this._getServerData.getServerData()
         .subscribe((data) => this.reviews = data)
                    // (error) => this.errorMessage = error);
+
+  }
+  deleteReview() {
+    this._deleteReview.deleteReview(this.reviews.id)
+        .subscribe( () => console.log("Review has been deleted"));
   }
 }

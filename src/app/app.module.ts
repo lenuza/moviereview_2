@@ -12,6 +12,7 @@ import { ReviewThumbnailComponent } from './review-thumbnail/review-thumbnail.co
 import { ReviewDetailsComponent } from './review-details/review-details.component';
 import { NavComponent } from './nav/nav.component';
 import { ReviewFormImageComponent } from './review-form-image/review-form-image.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReviewFormImageComponent } from './review-form-image/review-form-image.
     ReviewThumbnailComponent,
     ReviewDetailsComponent,
     NavComponent,
-    ReviewFormImageComponent
+    ReviewFormImageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

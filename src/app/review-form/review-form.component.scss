@@ -1,8 +1,26 @@
+@import "src/styles.scss";
+html {
+  background-color : map-get($colors, primary);
+
+}
 main {
+  background-color : map-get($colors, primary);
   position: absolute;
   left: 50%; /* position the left edge of the element at the middle of the parent */
   margin-top: 50px;  /*https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element */
   transform: translate(-50%);
+
+  #redirect-modal {
+    background-color : map-get($colors, primary);
+    border: 2px solid  map-get($colors, button-border);
+    border-radius: 5px;
+    position: absolute;
+    padding: 20px;
+    right: 40px;
+    bottom: 200px;
+    text-align: center;
+
+  }
 }
 
 /****review form****/
@@ -43,7 +61,6 @@ figure {
   top: -360px;
   width: auto;
 }
-
 
 /***lables ***/
 .invisible {

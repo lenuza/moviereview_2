@@ -35,4 +35,19 @@ nav {
       }
     }
   }
+
+  $breakpoint-tablet: 760px;
+  @media (max-width: $breakpoint-tablet) {
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+      width: 100%;
+        a {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
