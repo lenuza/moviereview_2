@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Review} from "./models/review.model";
-import { GetlocalstorageService } from '../getlocalstorage.service';
-import { GetjsonserverService } from '../getjsonserver.service';
 import { HttpClient } from '@angular/common/http';
+import {Review} from "../models/review.model";
+import { jsonserverService  } from '../services/jsonserver.service';
+
 
 @Component({
   selector: 'app-review-thumbnail',
@@ -11,15 +11,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ReviewThumbnailComponent implements OnInit {
   public reviews = [];
+  // public errorMessage;
  // constructor(private getData: GetlocalstorageService) { }
-  constructor(private getServerData: GetjsonserverService) { }
+  constructor(private _getServerData: jsonserverService) { }
 
   ngOnInit() {
   // var reviews: [] = [];
   // this.reviews = this.getData.getParsedData();
   // console.log(reviews)
 
-    this.getServerData.getServerData()
-        .subscribe((data) => this.reviews = data);
+    this._getServerData.getServerData()
+        .subscribe((data) => this.reviews = data)
+                   // (error) => this.errorMessage = error);
   }
 }

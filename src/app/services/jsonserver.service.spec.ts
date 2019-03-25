@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetjsonserverService } from './getjsonserver.service';
+import { jsonserverService } from './jsonserver.service';
 
 describe('GetjsonserverService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GetjsonserverService = TestBed.get(GetjsonserverService);
+    const service: jsonserverService = TestBed.get(jsonserverService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,10 +1,12 @@
 import { Component, OnInit, AfterViewInit, Directive, ViewChild, ElementRef } from '@angular/core';
-import { FormGroup, FormControl } from  '@angular/forms';
+import { FormGroup, FormControl, Validators } from  '@angular/forms';
 import {Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 // import * as $ from 'jquery';
 
 import { ReviewFormImageComponent } from '../review-form-image/review-form-image.component';
 import {Review} from "../models/review.model";
+import { jsonserverService  } from '../services/jsonserver.service';
 
 @Component({
   selector: 'app-review-form',
@@ -15,8 +17,9 @@ import {Review} from "../models/review.model";
 export class ReviewFormComponent implements OnInit {
 
   @ViewChild(ReviewFormImageComponent) reviewFormImageComponent: ReviewFormImageComponent;
-  constructor(private router: Router) {};
-// hiding the stay on page button modal
+  constructor(private router: Router, private http: HttpClient,
+    private _getServerData: jsonserverService, private _postServerData: jsonserverService) {};
+// hiding the "stay on page" modal
   isCollapsed: boolean = true;
 
   reviewForm: FormGroup;
@@ -25,11 +28,11 @@ export class ReviewFormComponent implements OnInit {
       cast: new FormControl(),
       director: new FormControl(),
       image: new FormControl(),
-      imageName: new FormControl(),
       notes: new FormControl(),
-      title: new FormControl()
+      title: new FormControl('', Validators.required)
     });
   }
+
 // add image data from the review-form-image component to the FormGroup
   addImage (imgInfo) {
     this.reviewForm.patchValue({ image: imgInfo.imgURL, imageName: imgInfo.getMovie });
@@ -37,17 +40,25 @@ export class ReviewFormComponent implements OnInit {
     document.getElementById('imagePoster').setAttribute('src', imgInfo.imgURL);
     document.getElementById('imagePoster').setAttribute('alt', imgInfo.getMovie)
   }
-//saving form data in local storage
+//saving form data on our fake jason server
   onSubmit() {
+
 //if first review - create review array to hold the review objects
-    var arrayContainer = JSON.parse(localStorage.getItem('reviews'));
-    if (!arrayContainer) {
-       arrayContainer = [];
-    }
-//then add the current review to the array
-    var jsonData = this.reviewForm.value;
-    arrayContainer.push(jsonData);
-    localStorage.setItem('reviews', JSON.stringify(arrayContainer));
+
+    // console.log(reviewContainer);
+    // if (!reviewContainer) {
+    //    reviewContainer = [];
+    // }
+//then add the new review to the array
+    var newReview = this.reviewForm.value;
+    console.log(newReview)
+    var reviewContainer = this._getServerData.getServerData();
+    reviewContainer.subscribe((data) => this.reviews = data);
+
+    this._postServerData.postServerData()
+        .subscribe((data) => reviewContainer.push(newReview));
+                   // (error) => this.errorMessage = error);
+    // localStorage.setItem('reviews', JSON.stringify(arrayContainer));
 //Form reset
     if (this.reviewForm.valid) {
       this.reviewFormImageComponent.imageInput.reset();

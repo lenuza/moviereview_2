@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Review} from "../models/review.model";
-import { GetlocalstorageService } from '../getlocalstorage.service';
+import { GetlocalstorageService } from '../services/getlocalstorage.service';
 
 @Component({
   selector: 'app-review-details',

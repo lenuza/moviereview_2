@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'new', component: ReviewFormComponent },
   { path: 'reviews', component: ReviewThumbnailComponent },
-  { path: 'details', component: ReviewDetailsComponent }
+  { path: ':id', component: ReviewDetailsComponent }
 
 ];
 

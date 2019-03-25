@@ -2,7 +2,13 @@
 
   <form  [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="review-form" class="review-form" autocomplete="off">
     <label for="title" class="invisible">Movie title</label>
-    <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title" required/>
+    <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title"/>
+    <!-- <div *ngIf="title.invalid && (title.dirty || title.touched)"
+    class="alert alert-danger">
+      <div *ngIf="title.errors.required">
+         Title is required.
+      </div>
+     </div> -->
     <label for="director" class="invisible">Director</label>
     <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
     <label for="image" class="invisible">Movie image</label>
@@ -11,7 +17,7 @@
     <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
     <label for="text-body" class="invisible">Your notes</label>
     <textarea id="text-body" formControlName="notes" name="notes" rows="10" cols="100" placeholder="Your notes..."></textarea>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
     <figure>
       <img id="imagePoster" src="" alt=""/>
     </figure>
