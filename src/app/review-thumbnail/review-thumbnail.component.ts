@@ -10,7 +10,7 @@ import { jsonserverService  } from '../services/jsonserver.service';
   styleUrls: ['./review-thumbnail.component.scss'],
 })
 export class ReviewThumbnailComponent implements OnInit {
-  public reviews = [];
+  public reviews: Review;
   // public errorMessage;
  // constructor(private getData: GetlocalstorageService) { }
   constructor(private _getServerData: jsonserverService) { }

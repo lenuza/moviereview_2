@@ -53,11 +53,10 @@ export class ReviewFormComponent implements OnInit {
     var newReview = this.reviewForm.value;
     console.log(newReview)
     var reviewContainer = this._getServerData.getServerData();
-    reviewContainer.subscribe((data) => this.reviews = data);
+    reviewContainer.subscribe(data => this.reviews = data);
 
-    this._postServerData.postServerData()
-        .subscribe((data) => reviewContainer.push(newReview));
-                   // (error) => this.errorMessage = error);
+    this._postServerData.postServerData(newReview)
+      .subscribe(data => console.log('Done posting.'));
     // localStorage.setItem('reviews', JSON.stringify(arrayContainer));
 //Form reset
     if (this.reviewForm.valid) {
@@ -88,4 +87,6 @@ export class ReviewFormComponent implements OnInit {
 //wihout page reload it stays on the current page, but is not displaying the review form
    window.document.location.reload();
   };
+
+  reviews: Review
 }

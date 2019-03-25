@@ -15,13 +15,13 @@ export class jsonserverService {
   constructor(private http: HttpClient) { }
 
   getServerData(): Observable<Review> {
-    return this.http.get<Response>(this.url);
+    return this.http.get<Review>(this.url);
                     // .catch(this.errorCatcher);
   }
   // errorCatcher(error: HttpErrorResponse) {
   //   return Observable.throw(error.messaage || 'Server error');
   //}
-  postServerData(review: Review): Observable<Review> {
+  postServerData(review: Review): Observable<Object> {
     return this.http.post('http://localhost:3000/reviews', review, {
       headers: new HttpHeaders ({
         'Content-Type': 'application/json'
