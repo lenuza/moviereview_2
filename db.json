@@ -10,15 +10,6 @@
       "title": "The muppet show"
     },
     {
-      "id": 2,
-      "cast": "Alladin",
-      "director": "Singeetam Srinivasa Rao",
-      "image": "http://image.tmdb.org/t/p/w185///hjg2s6L8A133YvLXi4rPgrwGvTe.jpg",
-      "imageName": "Alladin",
-      "notes": "At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia ",
-      "title": "Son of Alladin"
-    },
-    {
       "id": 3,
       "cast": "Sophia Lillis, Jack Dylan Grazer and more",
       "director": "Andrés Muschietti",
@@ -154,81 +145,6 @@
       "title": "Kon-Tiki"
     },
     {
-      "id": 20
-    },
-    {
-      "id": 21
-    },
-    {
-      "id": 22
-    },
-    {
-      "id": 24
-    },
-    {
-      "id": 25
-    },
-    {
-      "id": 26
-    },
-    {
-      "id": 27
-    },
-    {
-      "id": 28
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 32
-    },
-    {
-      "id": 33
-    },
-    {
-      "id": 34
-    },
-    {
-      "id": 35
-    },
-    {
-      "id": 36
-    },
-    {
-      "id": 37
-    },
-    {
-      "id": 38
-    },
-    {
-      "id": 39
-    },
-    {
-      "id": 40
-    },
-    {
-      "id": 41
-    },
-    {
-      "id": 42
-    },
-    {
-      "id": 43
-    },
-    {
-      "id": 44
-    },
-    {
-      "id": 45
-    },
-    {
-      "id": 46
-    },
-    {
-      "id": 47
-    },
-    {
       "cast": "OVca",
       "director": "Ovca",
       "image": "http://image.tmdb.org/t/p/w185///v8yGbB1MJPTDf3cIX0rKFOZPDge.jpg",
@@ -243,46 +159,6 @@
       "notes": "Hello Dolly\nThis is miss Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin', you're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, take her wrap fellas\nFind her an empty lap, fellas\nDolly, never go away again\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, golly gee, fellas\nHave a little faith in me, fellas\nDolly, never go away\nPromise, you'll never go away\nDolly, never go away again\n",
       "title": "Hello Dolly",
       "id": 55
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 56
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 61
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 62
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 63
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 64
     }
   ]
 }
