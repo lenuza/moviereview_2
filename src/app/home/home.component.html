@@ -4,8 +4,7 @@
     <div *ngFor="let movie of movies">
       <div>
         <h3 id="title" class="latest-movies">{{movie.title}}</h3>
-        <p id="cast" class="latest-movies">{{movie.cast}}</p>
-        <p id="vote" class="latest-movies">{{movie.vote_average}}</p>
+        <p id="vote" class="latest-movies">Vote: {{movie.vote_average}}</p>
         <p id="overview" class="latest-movies">{{movie.overview}}</p>
       </div>
       <img id="image" src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" alt="{{movie.title}}"/>
