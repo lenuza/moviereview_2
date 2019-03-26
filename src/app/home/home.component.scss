@@ -1,1 +1,20 @@
 @import "src/styles.scss";
+
+div {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  border: 2px solid #000;
+
+  img {
+    width: 20%;
+  }
+
+  div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 80%;
+  }
+
+}

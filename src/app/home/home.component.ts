@@ -8,6 +8,7 @@ import { latestMovies } from "../models/latestMovies";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  movies: latestMovies
 
   constructor(private client: HttpClient) { }
 
@@ -18,13 +19,8 @@ export class HomeComponent implements OnInit {
         fetch(url)
           .then(response => response.json())
           .then(data => {
-              var fiveMovies = data.results.slice(15);
-
-              // var imgURL =  `http://image.tmdb.org/t/p/w185//${poster_path}`;
-              console.log(fiveMovies)
+              this.movies = data.results.slice(15);
           })
           .catch(err => console.log('no movies found'))
-
   }
-
 }

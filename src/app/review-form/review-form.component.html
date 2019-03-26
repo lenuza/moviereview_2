@@ -1,32 +1,32 @@
 <main id="review-main">
-
-  <form  [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="review-form" class="review-form" autocomplete="off">
-    <label for="title" class="invisible">Movie title</label>
-    <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title"/>
-    <!-- <div *ngIf="title.invalid && (title.dirty || title.touched)"
-    class="alert alert-danger">
-      <div *ngIf="title.errors.required">
-         Title is required.
-      </div>
-     </div> -->
-    <label for="director" class="invisible">Director</label>
-    <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
-    <label for="image" class="invisible">Movie image</label>
-    <app-review-form-image (addImage)="addImage($event)"></app-review-form-image>
-    <label for="cast" id="test" class="invisible">Movie cast</label>
-    <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
-    <label for="text-body" class="invisible">Your notes</label>
-    <textarea id="text-body" formControlName="notes" name="notes" rows="10" cols="100" placeholder="Your notes..."></textarea>
-    <button type="submit" class="btn btn-success">Submit</button>
-    <figure>
-      <img id="imagePoster" src="" alt=""/>
-    </figure>
-  </form>
-
- <!-- a modal message warning user we be redirected upon submitting form  -->
- <div id="redirect-modal" *ngIf="!isCollapsed">
-    <p>You will be redirected to the review page in <span id="seconds"></span> seconds</p>
-    <button type="button"  (click)="stayOnPage();" id="stayOnPage">Stay on page</button>
- </div>
+  <div id="wrapper">
+    <form  [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="review-form" class="review-form" autocomplete="off">
+      <label for="title" class="invisible">Movie title</label>
+      <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title"/>
+      <!-- <div *ngIf="title.invalid && (title.dirty || title.touched)"
+      class="alert alert-danger">
+        <div *ngIf="title.errors.required">
+           Title is required.
+        </div>
+       </div> -->
+      <label for="director" class="invisible">Director</label>
+      <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
+      <label for="image" class="invisible">Movie image</label>
+      <app-review-form-image (addImage)="addImage($event)"></app-review-form-image>
+      <label for="cast" id="test" class="invisible">Movie cast</label>
+      <input id="cast" formControlName="cast" name="cast" type="text" placeholder="Movie cast" />
+      <label for="text-body" class="invisible">Your notes</label>
+      <textarea id="text-body" formControlName="notes" name="notes" rows="10" cols="100" placeholder="Your notes..."></textarea>
+      <button type="submit" class="btn btn-success">Submit</button>
+      <figure>
+        <img id="imagePoster" src="" alt=""/>
+      </figure>
+    </form>
+   <!-- a modal message warning user we be redirected upon submitting form  -->
+   <div id="redirect-modal" *ngIf="!isCollapsed">
+      <p>You will be redirected to the review page in <span id="seconds"></span> seconds</p>
+      <button type="button"  (click)="stayOnPage();" id="stayOnPage">Stay on page</button>
+   </div>
+  </div>
 
 </main>

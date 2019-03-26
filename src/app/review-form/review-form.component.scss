@@ -1,72 +1,77 @@
 @import "src/styles.scss";
-html {
-  background-color : map-get($colors, primary);
 
-}
 main {
   background-color : map-get($colors, primary);
-  position: absolute;
-  left: 50%; /* position the left edge of the element at the middle of the parent */
-  margin-top: 50px;  /*https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element */
-  transform: translate(-50%);
 
-  #redirect-modal {
-    background-color : map-get($colors, primary);
-    border: 2px solid  map-get($colors, button-border);
-    border-radius: 5px;
-    position: absolute;
-    padding: 20px;
-    right: 40px;
-    bottom: 200px;
-    text-align: center;
+
+  #wrapper{
+
+    #redirect-modal {
+      position: absolute;
+      left: 50%; /* position the left edge of the element at the middle of the parent */
+      margin-top: 50px;  /*https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element */
+      transform: translate(-50%);
+      background-color : map-get($colors, primary);
+      border: 2px solid  map-get($colors, button-border);
+      border-radius: 5px;
+      position: absolute;
+      padding: 20px;
+      right: 40px;
+      bottom: 200px;
+      text-align: center;
+
+    }
+
+  /****review form****/
+
+  form {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+
+    input {
+      border: 0;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    button {
+      float: right;
+      font-size: 1em;
+      padding: 5px;
+      width: 50%;
+    }
+
+    textarea {
+      font-size: 1.2em;
+      width: 100%;
+    }
 
   }
-}
 
-/****review form****/
-
-form {
-  margin: auto;
-  width: 500px;
-
-  input {
-    border: 0;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    width: 100%;
+  /***image position***/
+  img {
+    width: 250px;
+  }
+  figure {
+    max-width: 204px;
+    position: relative;
+    left: 470px;
+    top: -360px;
+    width: auto;
   }
 
-  button {
-    float: right;
-    font-size: 1em;
-    padding: 5px;
-    width: 50%;
+  /***lables ***/
+  .invisible {
+      height: 1px;
+      left: -1000px;
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
   }
 
-  textarea {
-    font-size: 1.2em;
-    width: 100%;
   }
 
-}
-
-/***image position***/
-img {
-  width: 250px;
-}
-figure {
-  max-width: 204px;
-  position: relative;
-  left: 470px;
-  top: -360px;
-  width: auto;
-}
-
-/***lables ***/
-.invisible {
-    height: 1px;
-    left: -1000px;
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
 }
