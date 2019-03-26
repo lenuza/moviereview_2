@@ -11,7 +11,7 @@ export class ReviewDetailsComponent implements OnInit {
   public reviews: Review;
   public id: number;
   public review: Review;
-
+  public  errorMessage;
   constructor(private _getServerData: jsonserverService, private _getReview: jsonserverService) { }
 
   ngOnInit() {

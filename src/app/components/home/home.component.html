@@ -3,6 +3,7 @@
   <main id="main">
     <div *ngFor="let movie of movies">
       <div>
+        <p>{{errorMessage}}</p>
         <h3 id="title" class="latest-movies">{{movie.title}}</h3>
         <p id="vote" class="latest-movies">Vote: {{movie.vote_average}}</p>
         <p id="overview" class="latest-movies">{{movie.overview}}</p>

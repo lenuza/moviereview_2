@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Review } from '../models/review.model';
 import { Observable } from 'rxjs/Observable';
-// import { Observable, throwError } from 'rxjs';
-// import { catchError, retry } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import {map, catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,26 +14,25 @@ export class jsonserverService {
 
   constructor(private http: HttpClient) { }
 
+  errorHandler(error: HttpErrorResponse) {
+    return throwError(error.message || "Server Error!"); }
+
   getServerData(): Observable<Review> {
-    return this.http.get<Review>(this.url);
-                    // .catch(this.errorCatcher);
+    return this.http.get<Review>(this.url)
+                  .pipe(catchError(this.errorHandler))
   }
   getReview(id: number): Observable<Object> {
-    return this.http.get(`${this.url}/${id}`);
-                    // .catch(this.errorCatcher);
+    return this.http.get(`${this.url}/${id}`)
+                    .pipe(catchError(this.errorHandler))
   }
-  // errorCatcher(error: HttpErrorResponse) {
-  //   return Observable.throw(error.messaage || 'Server error');
-  //}
+
   postServerData(review: Review): Observable<Object> {
-    return this.http.post(this.url, review);
+    return this.http.post(this.url, review)
+                    .pipe(catchError(this.errorHandler))
   }
-  // errorCatcher(error: HttpErrorResponse) {
-  //   return Observable.throw(error.messaage || 'Server error');
-  //}
 
   deleteReview(id: number): Observable<{}> {
     return this.http.delete(`${this.url}/${id}`)
-
+                      .pipe(catchError(this.errorHandler))
   }
 }
