@@ -70,7 +70,7 @@ export class ReviewFormComponent implements OnInit {
 //redirect to review page
     setTimeout(() => {
       this.router.navigateByUrl('/reviews');
-    }, 5000);
+    }, 7000);
 //countdown for redirect
     var seconds = 5;
     var counter = setInterval(() => {

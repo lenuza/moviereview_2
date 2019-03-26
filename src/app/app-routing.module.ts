@@ -8,9 +8,12 @@ import { ReviewDetailsComponent } from './review-details/review-details.componen
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'new', component: ReviewFormComponent },
-  { path: 'reviews', component: ReviewThumbnailComponent },
-  { path: 'review/:id', component: ReviewDetailsComponent }
-
+  { path: 'reviews',
+      children: [
+        { path: '', component: ReviewThumbnailComponent },
+        { path: ':id', component: ReviewDetailsComponent }
+      ]
+  }
 ];
 
 @NgModule({

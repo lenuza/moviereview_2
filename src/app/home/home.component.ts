@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { latestMovies } from "../models/latestMovies";
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,16 @@ export class HomeComponent implements OnInit {
   constructor(private client: HttpClient) { }
 
   ngOnInit() {
+
     // latestMovies(){
     var url= 'https://api.themoviedb.org/3/discover/movie?&sort_by=popularity.desc&api_key=86e4ae72951df30e8b2aa210d5338c8d'
         fetch(url)
           .then(response => response.json())
           .then(data => {
-              var twentyMovie = data.results[20];
-              console.log(twentyMovie)
+              var fiveMovies = data.results.slice(15);
+
+              // var imgURL =  `http://image.tmdb.org/t/p/w185//${poster_path}`;
+              console.log(fiveMovies)
           })
           .catch(err => console.log('no movies found'))
 

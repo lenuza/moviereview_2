@@ -11,6 +11,7 @@ import { jsonserverService  } from '../services/jsonserver.service';
 })
 export class ReviewThumbnailComponent implements OnInit {
   public reviews: Review;
+
   // public errorMessage;
  // constructor(private getData: GetlocalstorageService) { }
   constructor(private _getServerData: jsonserverService, private _deleteReview: jsonserverService) { }
@@ -25,8 +26,14 @@ export class ReviewThumbnailComponent implements OnInit {
                    // (error) => this.errorMessage = error);
 
   }
-  // deleteReview() {
-  //   this._deleteReview.deleteReview(this.reviews.id)
-  //       .subscribe( () => console.log("Review has been deleted"));
-  // }
+
+  deleteReview(id) {
+    this._deleteReview.deleteReview(id)
+        .subscribe()
+
+    this._getServerData.getServerData()
+        .subscribe((data) => this.reviews = data)
+                   // (error) => this.errorMessage = error);
+  };
+        // (err) => console.log(err)
 }

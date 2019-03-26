@@ -1,8 +1,13 @@
 <body>
-   <h1>Let's review some movies</h1>
-   <main id="main">
+  <h1>Let's review some movies</h1>
+  <main id="main">
+    <div *ngFor="let movie of latestMovies">
+      <h3 id="title" class="latest-movies">{{title}}</h3>
+      <p id="cast" class="latest-movies">{{rating}}</p>
+      <img id="image" src="{{poster}}" alt="{{title}}"/>
+    </div>
 
-   </main>
+  </main>
 </body>
  <!-- <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"> </script>
  <script type="text/javascript" src="js/movieReview.js"></script> -->

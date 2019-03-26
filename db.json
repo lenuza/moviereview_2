@@ -154,12 +154,6 @@
       "title": "Kon-Tiki"
     },
     {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
       "id": 20
     },
     {
@@ -253,18 +247,7 @@
       "id": 50
     },
     {
-      "id": 51
-    },
-    {
       "id": 52
-    },
-    {
-      "cast": "sf",
-      "director": "asdf",
-      "image": null,
-      "notes": "fasdf",
-      "title": "ad",
-      "id": 53
     },
     {
       "cast": "OVca",
@@ -281,166 +264,6 @@
       "notes": "Hello Dolly\nThis is miss Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin', you're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, take her wrap fellas\nFind her an empty lap, fellas\nDolly, never go away again\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, golly gee, fellas\nHave a little faith in me, fellas\nDolly, never go away\nPromise, you'll never go away\nDolly, never go away again\n",
       "title": "Hello Dolly",
       "id": 55
-    },
-    {
-      "cast": "dd",
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "dd",
-      "id": 56
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 57
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 58
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 59
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 60
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 61
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 62
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 63
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 64
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 65
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 66
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 67
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 68
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 69
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 70
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 71
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 72
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 73
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 74
-    },
-    {
-      "cast": null,
-      "director": null,
-      "image": null,
-      "notes": null,
-      "title": "",
-      "id": 75
     }
   ]
 }
