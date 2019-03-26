@@ -18,8 +18,8 @@ export class jsonserverService {
     return this.http.get<Review>(this.url);
                     // .catch(this.errorCatcher);
   }
-  getReview(id: number): Observable<Review> {
-    return this.http.get<Review>(`this.url/${id}`);
+  getReview(id: number): Observable<Object> {
+    return this.http.get(`${this.url}/${id}`);
                     // .catch(this.errorCatcher);
   }
   // errorCatcher(error: HttpErrorResponse) {

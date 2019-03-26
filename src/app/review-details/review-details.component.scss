@@ -1,0 +1,15 @@
+@import "src/styles.scss";
+
+main {
+
+  h3 {
+    padding-top: 10px;
+    text-align: center;
+  }
+  p {
+    padding: 10px 20px;
+  }
+  #director, #cast {
+    text-align: center;
+  }
+}
