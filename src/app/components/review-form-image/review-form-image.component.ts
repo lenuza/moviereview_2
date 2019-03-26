@@ -33,7 +33,7 @@ export class ReviewFormImageComponent implements OnInit {
         var imgURL =  `http://image.tmdb.org/t/p/w185//${getImage}`;
 
         this.addImage.emit( {imgURL, getMovie});
- 
+
       })
       .catch(err => console.log('image not found'))
   }

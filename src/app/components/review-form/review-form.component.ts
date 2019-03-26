@@ -1,12 +1,11 @@
 import { Component, OnInit, AfterViewInit, Directive, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from  '@angular/forms';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-// import * as $ from 'jquery';
 
 import { ReviewFormImageComponent } from '../review-form-image/review-form-image.component';
-import {Review} from "../models/review.model";
-import { jsonserverService  } from '../services/jsonserver.service';
+import { Review } from "../../models/review.model";
+import { jsonserverService  } from '../../services/jsonserver.service';
 
 @Component({
   selector: 'app-review-form',

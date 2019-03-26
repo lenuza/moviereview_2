@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Review} from "../models/review.model";
-import { jsonserverService  } from '../services/jsonserver.service';
+import {Review} from "../../models/review.model";
+import { jsonserverService  } from '../../services/jsonserver.service';
 
 
 @Component({

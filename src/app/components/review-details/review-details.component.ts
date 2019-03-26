@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Review} from "../models/review.model";
-import { jsonserverService  } from '../services/jsonserver.service';
+import {Review} from "../../models/review.model";
+import { jsonserverService  } from '../../services/jsonserver.service';
 
 @Component({
   selector: 'app-review-details',
@@ -18,7 +18,7 @@ export class ReviewDetailsComponent implements OnInit {
     var id = document.location.pathname.split("/").pop();
     var idNum = parseInt(id);
 
-    this._getReview.getReview(idNum)
+    this._getReview.getReview(id)
         .subscribe((data) => this.review = data)
 
 
