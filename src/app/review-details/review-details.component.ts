@@ -12,8 +12,8 @@ export class ReviewDetailsComponent implements OnInit {
   constructor(private _getServerData: jsonserverService, private _getReview: jsonserverService) { }
 
   ngOnInit() {
-    this._getReview.getReview('http://localhost:3000/reviews' + '/' + id)
-        .subscribe((res) => console.log(res))
+    // this._getReview.getReview('http://localhost:3000/reviews' + '/' + id)
+    //     .subscribe((res) => console.log(res))
 
   }
 }

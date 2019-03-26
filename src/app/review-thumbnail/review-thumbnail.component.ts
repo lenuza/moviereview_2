@@ -25,8 +25,8 @@ export class ReviewThumbnailComponent implements OnInit {
                    // (error) => this.errorMessage = error);
 
   }
-  deleteReview() {
-    this._deleteReview.deleteReview(this.reviews.id)
-        .subscribe( () => console.log("Review has been deleted"));
-  }
+  // deleteReview() {
+  //   this._deleteReview.deleteReview(this.reviews.id)
+  //       .subscribe( () => console.log("Review has been deleted"));
+  // }
 }

@@ -1,0 +1,11 @@
+@import "src/styles.scss";
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background-color: map-get($colors, primary);
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.2em;
+
+}
