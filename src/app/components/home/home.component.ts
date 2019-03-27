@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { latestMovies } from "../../models/latestMovies";
+import { latestMovies } from '../../models/latestMovies';
 
 @Component({
   selector: 'app-home',

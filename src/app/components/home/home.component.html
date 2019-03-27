@@ -8,10 +8,9 @@
         <p id="vote" class="latest-movies">Vote: {{movie.vote_average}}</p>
         <p id="overview" class="latest-movies">{{movie.overview}}</p>
       </div>
-      <img id="image" src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" alt="{{movie.title}}"/>
+      <a href="https://www.themoviedb.org/movie/{{movie.id}}" target="_blank" attr.aria-label="link to {{movie.title}} on the movie database site">
+        <img id="image" src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" alt="{{movie.title}}"/>
+      </a>
     </div>
-
   </main>
 </body>
- <!-- <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"> </script>
- <script type="text/javascript" src="js/movieReview.js"></script> -->
