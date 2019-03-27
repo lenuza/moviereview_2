@@ -42,21 +42,12 @@ export class ReviewFormComponent implements OnInit {
 //saving form data on our fake jason server
   onSubmit() {
 
-//if first review - create review array to hold the review objects
-
-    // console.log(reviewContainer);
-    // if (!reviewContainer) {
-    //    reviewContainer = [];
-    // }
 //then add the new review to the array
     var newReview = this.reviewForm.value;
-    console.log(newReview)
-    var reviewContainer = this._getServerData.getServerData();
-    reviewContainer.subscribe(data => this.reviews = data);
-
+  
     this._postServerData.postServerData(newReview)
       .subscribe(data => console.log('Done posting.'));
-    // localStorage.setItem('reviews', JSON.stringify(arrayContainer));
+
 //Form reset
     if (this.reviewForm.valid) {
       this.reviewFormImageComponent.imageInput.reset();

@@ -55,7 +55,8 @@ h3 {
     width: 30px;
 
     &:hover {
-      background-color: map-get($colors, button);
+      background-color: #cc3311;
+      border-color: #cc3311;
     }
   }
 }
