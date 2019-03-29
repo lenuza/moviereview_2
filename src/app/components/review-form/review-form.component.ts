@@ -15,13 +15,17 @@ import { jsonserverService  } from '../../services/jsonserver.service';
 
 export class ReviewFormComponent implements OnInit {
 
+  public reviews: Review;
+  reviewForm: FormGroup;
+
   @ViewChild(ReviewFormImageComponent) reviewFormImageComponent: ReviewFormImageComponent;
+  @ViewChild('title') titleInput: ElementRef;
   constructor(private router: Router, private http: HttpClient,
     private _getServerData: jsonserverService, private _postServerData: jsonserverService) {};
+
 // hiding the "stay on page" modal
   isCollapsed: boolean = true;
 
-  reviewForm: FormGroup;
   ngOnInit() {
     this.reviewForm = new FormGroup({
       cast: new FormControl(),
@@ -30,33 +34,40 @@ export class ReviewFormComponent implements OnInit {
       notes: new FormControl(),
       title: new FormControl('', Validators.required)
     });
+//setting focus on the title input    
+    this.titleInput.nativeElement.focus();
   }
 
-// add image data from the review-form-image component to the FormGroup
+//add image data from the review-form-image component to the FormGroup
   addImage (imgInfo) {
     this.reviewForm.patchValue({ image: imgInfo.imgURL, imageName: imgInfo.getMovie });
 
     document.getElementById('imagePoster').setAttribute('src', imgInfo.imgURL);
     document.getElementById('imagePoster').setAttribute('alt', imgInfo.getMovie)
   }
-//saving form data on our fake jason server
-  onSubmit() {
 
-//then add the new review to the array
+  onSubmit() {
+//if invalid do nothing
+  if(this.reviewForm.invalid) {
+     return
+  };
+
+  if (this.reviewForm.valid) {
+//only if valid add the new review to the array and post to server
     var newReview = this.reviewForm.value;
-  
+
     this._postServerData.postServerData(newReview)
       .subscribe(data => console.log('Done posting.'));
 
-//Form reset
-    if (this.reviewForm.valid) {
-      this.reviewFormImageComponent.imageInput.reset();
-      this.reviewForm.reset();
-      document.getElementById('imagePoster').setAttribute('src', '');
-      document.getElementById('imagePoster').setAttribute('alt', '')
-    }
-// Showing modal with stay on page button
+    this.reviewFormImageComponent.imageInput.reset();
+    this.reviewForm.reset();
+    document.getElementById('imagePoster').setAttribute('src', '');
+    document.getElementById('imagePoster').setAttribute('alt', '')
+  }
+
+//showing modal with stay on page button
     this.isCollapsed = false;
+
 //redirect to review page
     setTimeout(() => {
       this.router.navigateByUrl('/reviews');
@@ -71,12 +82,12 @@ export class ReviewFormComponent implements OnInit {
       }
     }, 1000);
   }
-//Stay on page, apparently navigate vlaue cannot be the current link, so used the code below
+
+//stay on page, apparently navigate value cannot be the current link, so used the code below
   stayOnPage() {
    this.router.navigate(['/reviews'], { replaceUrl: false, skipLocationChange: true })
 //wihout page reload it stays on the current page, but is not displaying the review form
    window.document.location.reload();
   };
 
-  reviews: Review
 }

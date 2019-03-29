@@ -2,13 +2,14 @@
   <div id="wrapper">
     <form  [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="review-form" class="review-form" autocomplete="off">
       <label for="title" class="invisible">Movie title</label>
-      <input id="title" formControlName="title" name="title" type="text" placeholder="Movie title"/>
-      <!-- <div *ngIf="title.invalid && (title.dirty || title.touched)"
-      class="alert alert-danger">
-        <div *ngIf="title.errors.required">
-           Title is required.
+      <input id="title" #title formControlName="title" name="title" type="text" placeholder="Movie title" required/>
+      <!-- error message if title is not provided -->
+      <div id="required" *ngIf="reviewForm.controls['title'].invalid && (reviewForm.controls['title'].dirty || reviewForm.controls['title'].touched)">
+        <div *ngIf="reviewForm.controls['title'].errors.required">
+          *Title is required.
         </div>
-       </div> -->
+      </div>
+
       <label for="director" class="invisible">Director</label>
       <input id="director" formControlName="director" name="director" type="text" placeholder="Director" />
       <label for="image" class="invisible">Movie image</label>

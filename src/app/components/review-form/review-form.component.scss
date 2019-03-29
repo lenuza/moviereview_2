@@ -32,9 +32,20 @@ main {
 
     input {
       border: 0;
+      border-radius: 3px;
       font-size: 1.2em;
-      margin-bottom: 10px;
+      margin-top: 10px;
       width: 100%;
+    }
+
+    #required {
+      color: #333;
+      height: 25px;
+      line-height: 25px;
+    }
+
+    input.ng-touched.ng-invalid {
+      border: 3px solid rgba(255,0,0, 0.3);
     }
 
     button {
@@ -45,7 +56,9 @@ main {
     }
 
     textarea {
+      border-radius: 3px;
       font-size: 1.2em;
+      margin-top: 10px;
       width: 100%;
     }
 

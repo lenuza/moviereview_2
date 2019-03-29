@@ -1,9 +1,11 @@
 
 form {
+
   input {
     border: 0;
+    border-radius: 3px;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-top: 10px;
     width: 100%;
   }
   button {
@@ -21,6 +23,7 @@ form {
     border: none;
     float: right;
     height: 30px;
+    margin-top: 10px;
     padding: 0;
     width: 20%;
 
