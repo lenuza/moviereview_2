@@ -15,8 +15,8 @@ export class jsonserverService {
   constructor(private http: HttpClient) { }
 
   errorHandler(error: HttpErrorResponse) {
-    return throwError(error.message || "Server Error!"); }
-
+    return throwError(error.message || "Server Error!");
+  }
   getServerData(): Observable<Review> {
     return this.http.get<Review>(this.url)
                   .pipe(catchError(this.errorHandler))
@@ -25,12 +25,10 @@ export class jsonserverService {
     return this.http.get(`${this.url}/${id}`)
                     .pipe(catchError(this.errorHandler))
   }
-
   postServerData(review: Review): Observable<Object> {
     return this.http.post(this.url, review)
                     .pipe(catchError(this.errorHandler))
   }
-
   deleteReview(id: number): Observable<{}> {
     return this.http.delete(`${this.url}/${id}`)
                       .pipe(catchError(this.errorHandler))

@@ -34,12 +34,11 @@ export class ReviewFormComponent implements OnInit {
       notes: new FormControl(),
       title: new FormControl('', Validators.required)
     });
-//setting focus on the title input    
+//setting focus on the title input
     this.titleInput.nativeElement.focus();
   }
-
 //add image data from the review-form-image component to the FormGroup
-  addImage (imgInfo) {
+  addImage(imgInfo) {
     this.reviewForm.patchValue({ image: imgInfo.imgURL, imageName: imgInfo.getMovie });
 
     document.getElementById('imagePoster').setAttribute('src', imgInfo.imgURL);
@@ -48,23 +47,22 @@ export class ReviewFormComponent implements OnInit {
 
   onSubmit() {
 //if invalid do nothing
-  if(this.reviewForm.invalid) {
-     return
-  };
+    if(this.reviewForm.invalid) {
+       return
+    };
 
-  if (this.reviewForm.valid) {
+    if (this.reviewForm.valid) {
 //only if valid add the new review to the array and post to server
-    var newReview = this.reviewForm.value;
+      var newReview = this.reviewForm.value;
 
-    this._postServerData.postServerData(newReview)
-      .subscribe(data => console.log('Done posting.'));
+      this._postServerData.postServerData(newReview)
+        .subscribe(data => console.log('Done posting.'));
 
-    this.reviewFormImageComponent.imageInput.reset();
-    this.reviewForm.reset();
-    document.getElementById('imagePoster').setAttribute('src', '');
-    document.getElementById('imagePoster').setAttribute('alt', '')
-  }
-
+      this.reviewFormImageComponent.imageInput.reset();
+      this.reviewForm.reset();
+      document.getElementById('imagePoster').setAttribute('src', '');
+      document.getElementById('imagePoster').setAttribute('alt', '')
+    }
 //showing modal with stay on page button
     this.isCollapsed = false;
 
@@ -78,7 +76,7 @@ export class ReviewFormComponent implements OnInit {
       document.getElementById('seconds').innerHTML = `${seconds}`;
       seconds--;
       if(seconds < 0) {
-      clearInterval(counter);
+        clearInterval(counter);
       }
     }, 1000);
   }
